@@ -100,8 +100,6 @@ export default function Header(props) {
 
 
                     <div className={styles.box} >
-
-
                         {userDB.BannerPortada && Object.keys(userDB.BannerPortada).length == 1 ? Object.keys(userDB.BannerPortada).map((i, index) =>
                             <div className="each-slide" key={index} >
                                 <div>
@@ -112,8 +110,8 @@ export default function Header(props) {
                                     }
                                 </div>
                             </div>
-                        ) 
-                        :
+                        )
+                            :
                             <Fade transitionDuration={800} duration={2000} scale={1}{...properties} indicators={true}>
                                 {
                                     userDB && userDB.BannerPortada && Object.keys(userDB.BannerPortada).map((i, index) =>

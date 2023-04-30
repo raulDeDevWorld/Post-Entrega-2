@@ -173,18 +173,10 @@ function TemplateOne() {
       ? setTextEditor(specificData[`PostImage_${router.query.temporal}`].nota)
       : setTextEditor('En redacción ')
 
-    userDB && userDB[validate()] && postsIMG[`${validate()}/PostImage_${router.query.temporal.slice(2)}`] == undefined
-      ? getIndexStorage(validate(), userDB[validate()].Posts, postsIMG, setUserPostsIMG)
-      : ''
+  
 
-    userDB && userDB["users"] && getIndexStorage('users', userDB["users"], postsIMG, setUserPostsIMG)
 
-    let arr2 = ['BannerNotas1', 'BannerNotas2', 'BannerNotas3', 'BannerNotas4']
-
-    arr2.map((i) => {
-      userDB && userDB[i] && getIndexStorage('Banners', userDB[i], postsIMG, setUserPostsIMG)
-    });
-
+   
 
 
   }, [userDB, specificData, router.query.temporal,]);
@@ -212,7 +204,7 @@ function TemplateOne() {
 
           <div className={styles.containerIMGCenter}>
             <div className={styles.containerIMG}>
-              <img src={postsIMG[`${validate()}/PostImage_${router.query.temporal.slice(2)}`]} className={styles.image} alt="" />
+              <img src={userDB[validate()].Posts[`PostImage_${router.query.temporal.slice(2)}`].url} className={styles.image} alt="" />
               <span className={styles.copyrightIMG}>{copyrightIMG}</span>
             </div>
           </div>
@@ -229,7 +221,7 @@ function TemplateOne() {
 
               <div className={styles.redactorData}>
                 <div className={styles.perfil}>
-                  <img src={postsIMG[`users/${userDB[validate()].Posts[`PostImage_${router.query.temporal.slice(2)}`].redactor}`]} className={styles.perfilIMG} alt="" />
+                  <img src={userDB.users[userDB[validate()].Posts[`PostImage_${router.query.temporal.slice(2)}`].redactor].url} className={styles.perfilIMG} alt="" />
                   {userDB.users[userDB[validate()].Posts[`PostImage_${router.query.temporal.slice(2)}`].redactor] && <p>{userDB.users[userDB[validate()].Posts[`PostImage_${router.query.temporal.slice(2)}`].redactor].name} <br /> Redactor</p>}
                 </div>
                 <span>
@@ -275,7 +267,7 @@ function TemplateOne() {
 
           <div className={styles.containerIMGCenter}>
             <div className={styles.containerIMG}>
-              <img src={postsIMG[`${validate()}/PostImage_${router.query.temporal.slice(2)}`]} className={styles.image} alt="" />
+              <img src={userDB[validate()].Posts[`PostImage_${router.query.temporal.slice(2)}`].url} className={styles.image} alt="" />
               <span className={styles.copyrightIMG}>{copyrightIMG}</span>
             </div>
           </div>

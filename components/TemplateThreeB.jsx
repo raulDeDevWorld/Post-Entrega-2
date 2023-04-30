@@ -32,7 +32,7 @@ function TemplateFour({ color, topic, post1, post2, post3, post4, description1, 
         router.pathname == "/Admin" && setDataEditor(i)
     }
 
-
+    console.log(userDB)
     useEffect(() => {
         userDB[topic] && userDB[topic]["Posts"] && setDataForDate(Object.keys(userDB[topic]["Posts"]).map(i => { const newI = i.split('_'); return newI[1] }).sort((a, b) => b - a))
     }, [userDB]);
@@ -57,6 +57,7 @@ function TemplateFour({ color, topic, post1, post2, post3, post4, description1, 
                             {router.pathname == "/Admin" && <span className={styles.datePost} onClick={() => handlerClickEnlace({ i, carpeta: 'Post' })}>{`${new Date(userDB[topic].Posts[`PostImage_${i}`].fecha).getDate()}-${months[new Date(userDB[topic].Posts[`PostImage_${i}`].fecha).getMonth()]} ${new Date(userDB[topic].Posts[`PostImage_${i}`].fecha).getHours()}:${new Date(userDB[topic].Posts[`PostImage_${i}`].fecha).getMinutes()}`}</span>}
 
                             <Link href={userDB[topic]["Posts"][`PostImage_${i}`]['enlace'] ? userDB[topic]["Posts"][`PostImage_${i}`]['enlace']  : ''} legacyBehavior>
+                                {console.log('blabla')}
                                 <a target={userDB[topic]["Posts"][`PostImage_${i}`]['enlace'] && userDB[topic]["Posts"][`PostImage_${i}`]['enlace'].includes('http') ? '_blanck' : ''}><img src={userDB[topic].Posts[`PostImage_${i}`].url} style={{ objectPosition: `${userDB[topic]["Posts"][`PostImage_${i}`]['objectFit']}` }} loading="lazy" /></a>
                             </Link>
 

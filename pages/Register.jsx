@@ -28,9 +28,10 @@ function Register() {
         const file = perfil.file
         const object = {
             [fileName]: {name, rol: 'periodista'} }
-        const ruteDB = 'users'
+        const ruteSTG = 'users' 
+        const ruteDB =`users/`
         writeUserData(ruteDB, object, setUserSuccess)
-        uploadIMG(ruteDB, fileName, file, null, monthAndYear)
+        uploadIMG(ruteDB, ruteSTG, fileName, file, null, monthAndYear)
     }
 
     console.log(userDB)
