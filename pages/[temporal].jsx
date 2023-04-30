@@ -34,6 +34,9 @@ const ReactQuill = dynamic(() => import('../components/content'), {
 })
 
 
+
+
+
 function TemplateOne() {
   const [textArea, setTextArea] = useState("");
   const { user, userDB, setUserData, setUserSuccess, success, postsIMG, setUserPostsIMG, date, specificData, setUserSpecificData } = useUser()

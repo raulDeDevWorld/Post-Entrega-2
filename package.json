@@ -28,7 +28,8 @@
     "react-dom": "18.2.0",
     "react-player": "^2.11.0",
     "react-quill": "^2.0.0",
-    "react-slideshow-image": "^4.0.5"
+    "react-slideshow-image": "^4.0.5",
+    "tts-react": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "8.26.0",
