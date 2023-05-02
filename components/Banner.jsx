@@ -17,7 +17,7 @@ export default function Banner({ ruta, carpeta, click }) {
         width: "30px",
         background: 'none',
         border: '0px'
-    };
+    }; 
 
     const properties = {
         prevArrow: <button style={{ ...buttonStyle }}></button>,
